@@ -17,8 +17,7 @@ class MovieList extends Component {
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                   alt={`poster ${movie.title}`}
                 />
-              </div>
-              {/* <div className="card-content">Popularity {movie.popularity}</div> */}
+              </div>              
             </NavLink>
           </div>
         );
