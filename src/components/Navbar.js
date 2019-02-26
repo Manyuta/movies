@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="nav-wrapper black darken-3">
       <div className="container">
         <a className="brand-logo" href="/">
-          <span className="text-logo">MoviesAPP</span>
+          <span className="text-logo">MyFLEX</span>
         </a>
       </div>
     </nav>

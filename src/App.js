@@ -9,21 +9,16 @@ import _ from "lodash";
 import config from "./config";
 
 const API_KEY = config.API_KEY;
+const API_URL = `https://api.themoviedb.org`;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: []
-    };
-    this.movieSearch();
-  }
+  state = {
+    movies: []
+  };
 
   componentDidMount() {
     axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US`
-      )
+      .get(`${API_URL}/3/movie/popular?api_key=${API_KEY}&language=en-US`)
       .then(res => {
         this.setState({
           movies: res.data.results.slice(0, 20)
@@ -34,7 +29,7 @@ class App extends Component {
   movieSearch = term => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?query=${term}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
+        `${API_URL}/3/search/movie?query=${term}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
       )
       .then(res => {
         this.setState({

@@ -1,15 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-class MovieList extends Component {
-  render() {
+const MovieList = props => {
+  
     //receive props from APP searchbar
-    const { movies } = this.props;
+    const { movies } = props;
+    console.log(props);
 
     const movieList = movies.length ? (
       movies.map(movie => {
         return (
-          <div className="card card-small" key={movie.id}>
+          <div className="card card-small" key={movie.id} >
             <NavLink to={"/" + movie.id}>
               <div className="card-image waves-effect waves-block waves-light">
                 <img
@@ -31,6 +32,6 @@ class MovieList extends Component {
       </div>
     );
   }
-}
+
 
 export default MovieList;
